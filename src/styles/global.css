@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  font-family: "Onest", sans-serif;
+}
+
 /* Keyframes Definitions */
 @keyframes fade-in {
   0% {
