@@ -17,15 +17,12 @@ let openIndex: number | null = null;
           >
             <span class="text-xs text-cyan-700 font-bold">Hover</span>
           </div>
-          <button class="mt-4 text-lg font-semibold text-cyan-300 hover:underline focus:outline-none">
+          <a
+            href={`/animations/${anim.name}`}
+            class="mt-4 text-lg font-semibold text-cyan-300 hover:underline focus:outline-none"
+          >
             {anim.name}
-          </button>
-          {openIndex === idx && (
-            <div class="mt-4 w-full bg-gray-900/80 rounded-lg p-4 text-left text-xs text-white font-mono whitespace-pre overflow-x-auto border border-cyan-700/30">
-              .{anim.class} &#123; animation: {anim.class} ... &#125;
-              {anim.keyframe}
-            </div>
-          )}
+          </a>
         </div>
       ))
     }

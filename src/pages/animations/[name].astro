@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { animations } from '../../data/animations';
+import Header from '../../components/Header.astro';
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+export async function getStaticPaths() {
+  return animations.map((anim) => ({
+    params: { name: anim.name },
+  }));
+}
+
+const { name } = Astro.params;
+const animation = animations.find((a) => a.name === name);
+
+if (!animation) {
+  throw new Error('Animation not found');
+}
+
+const cssPath = path.resolve('./src/styles/animations.css');
+const fullCSS = fs.readFileSync(cssPath, 'utf-8');
+
+function extractBlock(code: string, marker: string) {
+  const startIndex = code.indexOf(marker);
+  if (startIndex === -1) return '';
+
+  let i = startIndex + marker.length;
+  let depth = 1;
+  let block = marker;
+
+  while (i < code.length && depth > 0) {
+    const char = code[i];
+    block += char;
+
+    if (char === '{') depth++;
+    if (char === '}') depth--;
+
+    i++;
+  }
+
+  return block.trim();
+}
+
+const classMatch = extractBlock(fullCSS, `.${animation.name} {`);
+const keyframeMatch = extractBlock(fullCSS, `@keyframes ${animation.name} {`);
+const cssCode = `${classMatch}\n\n${keyframeMatch}`;
+---
+
+<Layout>
+  <main
+    class="relative mx-auto w-full max-w-7xl px-6 md:px-8 lg:px-12 text-white"
+  >
+    <Header />
+    <section>
+      <div class="bg-slate-950/80 text-white p-8">
+        <h1 class="text-3xl font-bold mb-4">{animation.name}</h1>
+
+        <pre
+          class="bg-gray-900 p-4 rounded border border-cyan-700/40 whitespace-pre overflow-x-auto">{cssCode}</pre>
+        <a href="/" class="mt-6 inline-block text-cyan-400 hover:underline"
+          >← Volver</a
+        >
+      </div>
+    </section>
+  </main>
+</Layout>
