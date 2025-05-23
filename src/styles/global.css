@@ -1,7 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 body {
-  font-family: "Onest", sans-serif;
+  font-family: 'Onest', sans-serif;
+}
+
+.hover-trigger:hover {
+  animation: var(--animation-name) 0.6s ease-out both;
 }
 
 /* Keyframes Definitions */

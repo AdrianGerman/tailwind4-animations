@@ -1,22 +1,24 @@
 ---
 import { animations } from '../data/animations';
-
-let openIndex: number | null = null;
 ---
+
+<div class="hidden">
+  {animations.map((anim) => anim.class).join(' ')}
+</div>
 
 <div class="flex flex-col items-center mt-20">
   <h1 class="text-4xl font-bold mb-8 text-center">Animations available</h1>
+
   <div
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl"
   >
     {
-      animations.map((anim, idx) => (
+      animations.map((anim) => (
         <div class="flex flex-col items-center bg-white/5 rounded-xl p-6 shadow-lg border border-white/10">
           <div
-            class={`w-20 h-20 bg-cyan-400/30 rounded-lg flex items-center justify-center transition-all duration-300 border border-cyan-400/40 hover:${anim.class}`}
-          >
-            <span class="text-xs text-cyan-700 font-bold">Hover</span>
-          </div>
+            class="hover-trigger w-20 h-20 bg-cyan-400/30 rounded-lg flex items-center justify-center border border-cyan-400/40 animate-on-hover"
+            style={`--animation-name: ${anim.class};`}
+          />
           <a
             href={`/animations/${anim.name}`}
             class="mt-4 text-lg font-semibold text-cyan-300 hover:underline focus:outline-none"
@@ -27,6 +29,7 @@ let openIndex: number | null = null;
       ))
     }
   </div>
+
   <p class="mt-10 text-gray-400 text-sm text-center">
     Hover over the square to see the animation. Click on the name to see the
     code.
