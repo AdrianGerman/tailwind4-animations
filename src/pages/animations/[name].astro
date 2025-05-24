@@ -1,51 +1,52 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { animations } from '../../data/animations';
-import Header from '../../components/Header.astro';
+import Layout from "../../layouts/Layout.astro"
+import { animations } from "../../data/animations"
+import Header from "../../components/Header.astro"
 
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs"
+import path from "node:path"
+import Back from "../../components/icons/Back.astro"
 
 export async function getStaticPaths() {
   return animations.map((anim) => ({
-    params: { name: anim.name },
-  }));
+    params: { name: anim.name }
+  }))
 }
 
-const { name } = Astro.params;
-const animation = animations.find((a) => a.name === name);
+const { name } = Astro.params
+const animation = animations.find((a) => a.name === name)
 
 if (!animation) {
-  throw new Error('Animation not found');
+  throw new Error("Animation not found")
 }
 
-const cssPath = path.resolve('./src/styles/animations.css');
-const fullCSS = fs.readFileSync(cssPath, 'utf-8');
+const cssPath = path.resolve("./src/styles/animations.css")
+const fullCSS = fs.readFileSync(cssPath, "utf-8")
 
 function extractBlock(code: string, marker: string) {
-  const startIndex = code.indexOf(marker);
-  if (startIndex === -1) return '';
+  const startIndex = code.indexOf(marker)
+  if (startIndex === -1) return ""
 
-  let i = startIndex + marker.length;
-  let depth = 1;
-  let block = marker;
+  let i = startIndex + marker.length
+  let depth = 1
+  let block = marker
 
   while (i < code.length && depth > 0) {
-    const char = code[i];
-    block += char;
+    const char = code[i]
+    block += char
 
-    if (char === '{') depth++;
-    if (char === '}') depth--;
+    if (char === "{") depth++
+    if (char === "}") depth--
 
-    i++;
+    i++
   }
 
-  return block.trim();
+  return block.trim()
 }
 
-const classMatch = extractBlock(fullCSS, `.${animation.name} {`);
-const keyframeMatch = extractBlock(fullCSS, `@keyframes ${animation.name} {`);
-const cssCode = `${classMatch}\n\n${keyframeMatch}`;
+const classMatch = extractBlock(fullCSS, `.${animation.name} {`)
+const keyframeMatch = extractBlock(fullCSS, `@keyframes ${animation.name} {`)
+const cssCode = `${classMatch}\n\n${keyframeMatch}`
 ---
 
 <Layout>
@@ -59,9 +60,13 @@ const cssCode = `${classMatch}\n\n${keyframeMatch}`;
 
         <pre
           class="bg-gray-900 p-4 rounded border border-cyan-700/40 whitespace-pre overflow-x-auto">{cssCode}</pre>
-        <a href="/" class="mt-6 inline-block text-cyan-400 hover:underline"
-          >← Volver</a
+        <a
+          href="/"
+          class="mt-6 text-cyan-400 hover:underline flex items-center gap-2"
         >
+          <Back class="w-4 h-4" />
+          Volver
+        </a>
       </div>
     </section>
   </main>
