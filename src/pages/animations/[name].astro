@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 import { animations } from "../../data/animations"
+
 import Header from "../../components/Header.astro"
 import Back from "../../components/icons/Back.astro"
 import Copy from "../../components/icons/Copy.astro"
@@ -77,12 +78,15 @@ const cssCode = `${classMatch}\n\n${keyframeMatch}`
           class="flex justify-between items-center px-4 py-2 border-b border-cyan-700/20 bg-gray-800/60 rounded-t"
         >
           <span class="text-sm font-mono text-gray-300">global.css</span>
-          <Copy
-            class="w-4 h-4 text-white cursor-pointer transition-transform duration-300 hover:scale-110"
-          />
+          <button id="copy-button">
+            <Copy
+              class="w-4 h-4 text-white cursor-pointer transition-transform duration-300 hover:scale-110"
+            />
+          </button>
         </div>
 
         <pre
+          id="code-block"
           class="text-sm font-mono bg-gray-900 p-4 rounded-b whitespace-pre overflow-x-auto">{cssCode}</pre>
 
         <div
@@ -100,3 +104,26 @@ const cssCode = `${classMatch}\n\n${keyframeMatch}`
     </section>
   </main>
 </Layout>
+
+<script>
+  function setupCopyCode() {
+    const copyButton = document.getElementById("copy-button")
+    const codeBlock = document.getElementById("code-block")
+
+    if (copyButton && codeBlock) {
+      copyButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(codeBlock.textContent ?? "")
+          copyButton.classList.add("text-green-400")
+          setTimeout(() => {
+            copyButton.classList.remove("text-green-400")
+          }, 1200)
+        } catch (err) {
+          console.error("Error copiando el código:", err)
+        }
+      })
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", setupCopyCode)
+</script>
