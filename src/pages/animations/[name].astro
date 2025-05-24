@@ -55,14 +55,28 @@ const cssCode = `${classMatch}\n\n${keyframeMatch}`
   >
     <Header />
     <section>
-      <div class="bg-slate-950/80 text-white p-8">
-        <h1 class="text-3xl font-bold mb-4">{animation.name}</h1>
+      <h1 class="text-2xl mb-6">{animation.name}</h1>
 
+      <div
+        class="bg-slate-950/20 text-white py-20 mb-10 rounded-lg border border-white/10 shadow"
+      >
+        <div class="flex justify-center">
+          <div
+            class="hover-trigger w-24 h-24 bg-cyan-400/30 rounded-lg flex items-center justify-center border border-cyan-400/40 animate-on-hover"
+            style={`--animation-name: ${animation.class};`}
+          >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-gray-900/80 text-white p-8 rounded-lg border border-cyan-700/40 shadow mb-10"
+      >
         <pre
-          class="bg-gray-900 p-4 rounded border border-cyan-700/40 whitespace-pre overflow-x-auto">{cssCode}</pre>
+          class="bg-gray-900 p-4 rounded whitespace-pre overflow-x-auto border border-cyan-700/20">{cssCode}</pre>
         <a
           href="/"
-          class="mt-6 text-cyan-400 hover:underline flex items-center gap-2"
+          class="mt-6 inline-flex text-cyan-400 hover:underline items-center gap-2"
         >
           <Back class="w-4 h-4" />
           Volver
