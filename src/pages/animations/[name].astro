@@ -2,10 +2,11 @@
 import Layout from "../../layouts/Layout.astro"
 import { animations } from "../../data/animations"
 import Header from "../../components/Header.astro"
+import Back from "../../components/icons/Back.astro"
+import Copy from "../../components/icons/Copy.astro"
 
 import fs from "node:fs"
 import path from "node:path"
-import Back from "../../components/icons/Back.astro"
 
 export async function getStaticPaths() {
   return animations.map((anim) => ({
@@ -70,17 +71,31 @@ const cssCode = `${classMatch}\n\n${keyframeMatch}`
       </div>
 
       <div
-        class="bg-gray-900/80 text-white p-8 rounded-lg border border-cyan-700/40 shadow mb-10"
+        class="bg-gray-900/80 text-white rounded-lg border border-cyan-700/40 shadow mb-10"
       >
-        <pre
-          class="bg-gray-900 p-4 rounded whitespace-pre overflow-x-auto border border-cyan-700/20">{cssCode}</pre>
-        <a
-          href="/"
-          class="mt-6 inline-flex text-cyan-400 hover:underline items-center gap-2"
+        <div
+          class="flex justify-between items-center px-4 py-2 border-b border-cyan-700/20 bg-gray-800/60 rounded-t"
         >
-          <Back class="w-4 h-4" />
-          Volver
-        </a>
+          <span class="text-sm font-mono text-gray-300">global.css</span>
+          <Copy
+            class="w-4 h-4 text-white cursor-pointer transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+
+        <pre
+          class="text-sm font-mono bg-gray-900 p-4 rounded-b whitespace-pre overflow-x-auto">{cssCode}</pre>
+
+        <div
+          class="flex justify-between items-center px-4 py-2 border-t border-cyan-700/20 bg-gray-800/60 rounded-b"
+        >
+          <a
+            href="/"
+            class="inline-flex text-cyan-400 hover:underline items-center gap-2 text-sm"
+          >
+            <Back class="w-4 h-4" />
+            Volver
+          </a>
+        </div>
       </div>
     </section>
   </main>
