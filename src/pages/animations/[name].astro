@@ -8,6 +8,7 @@ import Copy from "../../components/icons/Copy.astro"
 
 import fs from "node:fs"
 import path from "node:path"
+import Footer from "../../components/Footer.astro"
 
 export async function getStaticPaths() {
   return animations.map((anim) => ({
@@ -102,6 +103,7 @@ const cssCode = `${classMatch}\n\n${keyframeMatch}`
         </div>
       </div>
     </section>
+    <Footer />
   </main>
 </Layout>
 
