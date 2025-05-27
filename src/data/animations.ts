@@ -1,318 +1,318 @@
 export const animations = [
   {
-    name: 'blurred-fade-in',
+    name: 'Blurred fade in',
     class: 'blurred-fade-in',
   },
   {
-    name: 'fade-in',
+    name: 'Fade in',
     class: 'fade-in',
   },
   {
-    name: 'fade-out',
+    name: 'Fade out',
     class: 'fade-out',
   },
   {
-    name: 'slide-in-top',
+    name: 'Slide in top',
     class: 'slide-in-top',
   },
   {
-    name: 'slide-in-bottom',
+    name: 'Slide in bottom',
     class: 'slide-in-bottom',
   },
   {
-    name: 'slide-out-top',
+    name: 'Slide out top',
     class: 'slide-out-top',
   },
   {
-    name: 'slide-out-bottom',
+    name: 'Slide out bottom',
     class: 'slide-out-bottom',
   },
   {
-    name: 'zoom-in',
+    name: 'Zoom in',
     class: 'zoom-in',
   },
   {
-    name: 'zoom-out',
+    name: 'Zoom out',
     class: 'zoom-out',
   },
   {
-    name: 'rotate-90',
+    name: 'Rotate 90',
     class: 'rotate-90',
   },
   {
-    name: 'rotate-180',
+    name: 'Rotate 180',
     class: 'rotate-180',
   },
   {
-    name: 'rotate-360',
+    name: 'Rotate 360',
     class: 'rotate-360',
   },
   {
-    name: 'flip-horizontal',
+    name: 'Flip horizontal',
     class: 'flip-horizontal',
   },
   {
-    name: 'flip-vertical',
+    name: 'Flip vertical',
     class: 'flip-vertical',
   },
   {
-    name: 'bouncing',
+    name: 'Bouncing',
     class: 'bouncing',
   },
   {
-    name: 'swing',
+    name: 'Swing',
     class: 'swing',
   },
   {
-    name: 'wobble',
+    name: 'Wobble',
     class: 'wobble',
   },
   {
-    name: 'pulsing',
+    name: 'Pulsing',
     class: 'pulsing',
   },
   {
-    name: 'shake',
+    name: 'Shake',
     class: 'shake',
   },
   {
-    name: 'tada',
+    name: 'Tada',
     class: 'tada',
   },
   {
-    name: 'jump',
+    name: 'Jump',
     class: 'jump',
   },
   {
-    name: 'hang',
+    name: 'Hang',
     class: 'hang',
   },
   {
-    name: 'roll-in',
+    name: 'Roll in',
     class: 'roll-in',
   },
   {
-    name: 'roll-out',
+    name: 'Roll out',
     class: 'roll-out',
   },
   {
-    name: 'float',
+    name: 'Float',
     class: 'float',
   },
   {
-    name: 'sink',
+    name: 'Sink',
     class: 'sink',
   },
   {
-    name: 'flash',
+    name: 'Flash',
     class: 'flash',
   },
   {
-    name: 'jiggle',
+    name: 'Jiggle',
     class: 'jiggle',
   },
   {
-    name: 'rubber-band',
+    name: 'Rubber band',
     class: 'rubber-band',
   },
   {
-    name: 'scale',
+    name: 'Scale',
     class: 'scale',
   },
   {
-    name: 'slide-in-left',
+    name: 'Slide in left',
     class: 'slide-in-left',
   },
   {
-    name: 'slide-in-right',
+    name: 'Slide in right',
     class: 'slide-in-right',
   },
   {
-    name: 'slide-out-left',
+    name: 'Slide out left',
     class: 'slide-out-left',
   },
   {
-    name: 'slide-out-right',
+    name: 'Slide out right',
     class: 'slide-out-right',
   },
   {
-    name: 'spin-clockwise',
+    name: 'Spin clockwise',
     class: 'spin-clockwise',
   },
   {
-    name: 'spin-counter-clockwise',
+    name: 'Spin counter clockwise',
     class: 'spin-counter-clockwise',
   },
   {
-    name: 'flip-x',
+    name: 'Flip X',
     class: 'flip-x',
   },
   {
-    name: 'flip-y',
+    name: 'Flip Y',
     class: 'flip-y',
   },
   {
-    name: 'blink',
+    name: 'Blink',
     class: 'blink',
   },
   {
-    name: 'pop',
+    name: 'Pop',
     class: 'pop',
   },
   {
-    name: 'expand-horizontally',
+    name: 'Expand horizontally',
     class: 'expand-horizontally',
   },
   {
-    name: 'contract-horizontally',
+    name: 'Contract horizontally',
     class: 'contract-horizontally',
   },
   {
-    name: 'expand-vertically',
+    name: 'Expand vertically',
     class: 'expand-vertically',
   },
   {
-    name: 'contract-vertically',
+    name: 'Contract vertically',
     class: 'contract-vertically',
   },
   {
-    name: 'fade-in-up',
+    name: 'Fade in up',
     class: 'fade-in-up',
   },
   {
-    name: 'fade-in-down',
+    name: 'Fade in down',
     class: 'fade-in-down',
   },
   {
-    name: 'fade-in-left',
+    name: 'Fade in left',
     class: 'fade-in-left',
   },
   {
-    name: 'fade-in-right',
+    name: 'Fade in right',
     class: 'fade-in-right',
   },
   {
-    name: 'fade-out-up',
+    name: 'Fade out up',
     class: 'fade-out-up',
   },
   {
-    name: 'fade-out-down',
+    name: 'Fade out down',
     class: 'fade-out-down',
   },
   {
-    name: 'fade-out-left',
+    name: 'Fade out left',
     class: 'fade-out-left',
   },
   {
-    name: 'fade-out-right',
+    name: 'Fade out right',
     class: 'fade-out-right',
   },
   {
-    name: 'sway',
+    name: 'Sway',
     class: 'sway',
   },
   {
-    name: 'flip-in-x',
+    name: 'Flip in X',
     class: 'flip-in-x',
   },
   {
-    name: 'flip-in-y',
+    name: 'Flip in Y',
     class: 'flip-in-y',
   },
   {
-    name: 'flip-out-x',
+    name: 'Flip out X',
     class: 'flip-out-x',
   },
   {
-    name: 'flip-out-y',
+    name: 'Flip out Y',
     class: 'flip-out-y',
   },
   {
-    name: 'rotate-in',
+    name: 'Rotate in',
     class: 'rotate-in',
   },
   {
-    name: 'rotate-out',
+    name: 'Rotate out',
     class: 'rotate-out',
   },
   {
-    name: 'slide-rotate-in',
+    name: 'Slide rotate in',
     class: 'slide-rotate-in',
   },
   {
-    name: 'slide-rotate-out',
+    name: 'Slide rotate out',
     class: 'slide-rotate-out',
   },
   {
-    name: 'heartbeat',
+    name: 'Heartbeat',
     class: 'heartbeat',
   },
   {
-    name: 'horizontal-vibration',
+    name: 'Horizontal vibration',
     class: 'horizontal-vibration',
   },
   {
-    name: 'rotational-wave',
+    name: 'Rotational wave',
     class: 'rotational-wave',
   },
   {
-    name: 'skew',
+    name: 'Skew',
     class: 'skew',
   },
   {
-    name: 'skew-right',
+    name: 'Skew right',
     class: 'skew-right',
   },
   {
-    name: 'vertical-bounce',
+    name: 'Vertical bounce',
     class: 'vertical-bounce',
   },
   {
-    name: 'horizontal-bounce',
+    name: 'Horizontal bounce',
     class: 'horizontal-bounce',
   },
   {
-    name: 'tilt',
+    name: 'Tilt',
     class: 'tilt',
   },
   {
-    name: 'squeeze',
+    name: 'Squeeze',
     class: 'squeeze',
   },
   {
-    name: 'slide-up-fade',
+    name: 'Slide up fade',
     class: 'slide-up-fade',
   },
   {
-    name: 'bounce-fade-in',
+    name: 'Bounce fade in',
     class: 'bounce-fade-in',
   },
   {
-    name: 'swing-drop-in',
+    name: 'Swing drop in',
     class: 'swing-drop-in',
   },
   {
-    name: 'pulse-fade-in',
+    name: 'Pulse fade in',
     class: 'pulse-fade-in',
   },
   {
-    name: 'impulse-rotation-right',
+    name: 'Impulse rotation right',
     class: 'impulse-rotation-right',
   },
   {
-    name: 'impulse-rotation-left',
+    name: 'Impulse rotation left',
     class: 'impulse-rotation-left',
   },
   {
-    name: 'dancing',
+    name: 'Dancing',
     class: 'dancing',
   },
   {
-    name: 'pulse',
+    name: 'Pulse',
     class: 'pulse',
   },
   {
-    name: 'jelly',
+    name: 'Jelly',
     class: 'jelly',
   },
 ];

@@ -1,9 +1,9 @@
 ---
-import { animations } from '../data/animations';
+import { animations } from "../data/animations"
 ---
 
 <div class="hidden">
-  {animations.map((anim) => anim.class).join(' ')}
+  {animations.map((anim) => anim.class).join(" ")}
 </div>
 
 <div class="flex flex-col items-center mt-20">
@@ -20,7 +20,7 @@ import { animations } from '../data/animations';
             style={`--animation-name: ${anim.class};`}
           />
           <a
-            href={`/animations/${anim.name}`}
+            href={`/animations/${anim.class}`}
             class="mt-4 text-lg font-semibold text-cyan-300 hover:underline focus:outline-none"
           >
             {anim.name}
@@ -29,9 +29,4 @@ import { animations } from '../data/animations';
       ))
     }
   </div>
-
-  <p class="mt-10 text-gray-400 text-sm text-center">
-    Hover over the square to see the animation. Click on the name to see the
-    code.
-  </p>
 </div>

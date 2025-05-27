@@ -11,12 +11,12 @@ import path from "node:path"
 
 export async function getStaticPaths() {
   return animations.map((anim) => ({
-    params: { name: anim.name }
+    params: { name: anim.class }
   }))
 }
 
 const { name } = Astro.params
-const animation = animations.find((a) => a.name === name)
+const animation = animations.find((a) => a.class === name)
 
 if (!animation) {
   throw new Error("Animation not found")
@@ -46,8 +46,8 @@ function extractBlock(code: string, marker: string) {
   return block.trim()
 }
 
-const classMatch = extractBlock(fullCSS, `.${animation.name} {`)
-const keyframeMatch = extractBlock(fullCSS, `@keyframes ${animation.name} {`)
+const classMatch = extractBlock(fullCSS, `.${animation.class} {`)
+const keyframeMatch = extractBlock(fullCSS, `@keyframes ${animation.class} {`)
 const cssCode = `${classMatch}\n\n${keyframeMatch}`
 ---
 
